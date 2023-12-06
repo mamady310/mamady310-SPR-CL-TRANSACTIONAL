@@ -20,6 +20,7 @@ import java.util.List;
  * tonnage - we're left to assume some form of unwanted user error in that case.
  */
 @Service
+@Transactional(rollbackFor = InvalidTonnageException.class)
 public class ShipService {
     ShipRepository shipRepository;
     @Autowired
